@@ -1,3 +1,11 @@
+resto_front:
+    resource: "@RestoFrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
+resto_backend:
+    resource: "@RestoBackendBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
