@@ -1,0 +1,4 @@
+services:
+#    resto_backend.example:
+#        class: Resto\BackendBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
