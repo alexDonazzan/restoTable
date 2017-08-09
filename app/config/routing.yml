@@ -4,7 +4,7 @@ resto_front:
 
 resto_backend:
     resource: "@RestoBackendBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /employe
 
 app:
     resource: '@AppBundle/Controller/'

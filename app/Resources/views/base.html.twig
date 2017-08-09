@@ -2,12 +2,64 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            {# On charge le CSS de bootstrap depuis le site directement #}
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+        {% endblock %}
+        <title>{% block title %}{% endblock %}</title>
+
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+    <div class="container">
+        <div id="header" class="jumbotron">
+            <h1>La plateforme de réservation</h1>
+            <p>
+                Ce projet est avant tout pour m'entraîner à maîtriser symfony
+                et est censé permettre de simplifier la prise en charge de client pour un restaurant
+                par ses employés.
+            </p>
+            <p>
+                <!-- peut être pas à mettre dans la base -->
+                <a class="btn btn-primary btn-lg" href="{{ path('resto_backend_homepage') }}">
+                    Voir les noms réservés »
+                </a>
+
+            </p>
+        </div>
+
+        <div class="row">
+            <div id="menu" class="col-md-12">
+                <h3>Les tables</h3>
+<ul>
+    <li class="list-group-item">
+
+            Les tables disponibles :
+        <span class="badge">
+            12, 14
+        </span>
+
+    </li>
+    <li class="list-group-item">
+
+            Les tables réservées :
+        <span class="badge">
+            11, 18
+        </span>
+
+    </li>
+    <a class="btn btn-info btn-sm active" role="button" href="{{ path('resto_backend_homepage') }}">Gérer les reservations</a>
+    <a class="btn btn-info btn-sm active" role="button" href="{{ path('resto_backend_homepage') }}">Ajouter une réservation</a>
+
+</ul>
+
+            </div>
+            <div id="content" class="col-md-9">
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

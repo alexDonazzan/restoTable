@@ -8,6 +8,14 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('RestoBackendBundle:Default:index.html.twig');
+        $resa = array(
+            "alex", "patrick"
+        );
+
+        return $this->render('RestoBackendBundle:Default:index.html.twig',
+            array(
+            "reservations" => $resa
+            )
+        );
     }
 }
