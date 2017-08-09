@@ -49,6 +49,21 @@ class Buffet
      */
     private $date;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="book", type="boolean", options={"default":false}))
+     */
+    private $book;
+
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="busy", type="boolean", options={"default":false}))
+     */
+    private $busy;
+
 
     /**
      * Get id
@@ -171,5 +186,53 @@ class Buffet
     public function getClient()
     {
         return $this->client;
+    }
+
+    /**
+     * Set book
+     *
+     * @param boolean $book
+     *
+     * @return Buffet
+     */
+    public function setBook($book)
+    {
+        $this->book = $book;
+
+        return $this;
+    }
+
+    /**
+     * Get book
+     *
+     * @return boolean
+     */
+    public function getBook()
+    {
+        return $this->book;
+    }
+
+    /**
+     * Set busy
+     *
+     * @param boolean $busy
+     *
+     * @return Buffet
+     */
+    public function setBusy($busy)
+    {
+        $this->busy = $busy;
+
+        return $this;
+    }
+
+    /**
+     * Get busy
+     *
+     * @return boolean
+     */
+    public function getBusy()
+    {
+        return $this->busy;
     }
 }
