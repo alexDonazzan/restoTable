@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Buffet
 {
     /**
-     * @var
+     * @var client
      * @ORM\ManyToMany(targetEntity="Resto\BackendBundle\Entity\Client", cascade={"persist"})
      */
     private $client;

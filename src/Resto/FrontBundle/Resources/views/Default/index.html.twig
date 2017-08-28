@@ -1,1 +1,49 @@
-Hello World!
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    Réservations des clients
+{% endblock %}
+
+{% block body %}
+    <h3>
+        Les réservations arrivées pour le service :
+    </h3>
+
+    {% if reservations is defined %}
+        <ul>
+            {% for reservation in reservations %}
+                <li>
+                    {{ reservation }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <span class="badge badge-default">
+            Personne n'est encore arrivé !
+        </span>
+    {% endif %}
+{% endblock %}
+
+{% block freeTable %}
+    {% if tablesfree is defined %}
+        {% for table in tablesfree %}
+            <span class="badge badge-success">
+            {{ table.number }}
+        </span>
+        {% endfor %}
+    {% else %}
+        <span class="badge badge-warning">Pas de table réservées.</span>
+    {% endif %}
+{% endblock %}
+
+{% block rentTable %}
+    {% if rents is defined %}
+        {% for rent in rents %}
+            <span class="badge badge-info">
+            {{ rent.number }}
+        </span>
+        {% endfor %}
+    {% else %}
+        <span class="badge badge-success">Aucunes tables n'est actuellement réservées.</span>
+    {% endif %}
+{% endblock %}

@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         {% block stylesheets %}
             {# On charge le CSS de bootstrap depuis le site directement #}
-            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
 
         {% endblock %}
         <title>{% block title %}{% endblock %}</title>
@@ -36,17 +36,16 @@
     <li class="list-group-item">
 
             Les tables disponibles :
-        <span class="badge">
-            12, 14
-        </span>
+        {% block rentTable %}
 
+        {% endblock %}
     </li>
     <li class="list-group-item">
 
             Les tables réservées :
-        <span class="badge">
-            11, 18
-        </span>
+        {% block freeTable %}
+
+        {% endblock %}
 
     </li>
     <a class="btn btn-info btn-sm active" role="button" href="{{ path('resto_backend_homepage') }}">Gérer les reservations</a>

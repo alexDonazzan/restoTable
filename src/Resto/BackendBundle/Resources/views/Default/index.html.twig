@@ -8,7 +8,7 @@ Réservations
 <h3>
     Les réservations arrivées :
 </h3>
-
+    {% if reservations is defined %}
     <ul>
     {% for reservation in reservations %}
             <li>
@@ -17,4 +17,9 @@ Réservations
     {% endfor %}
 
     </ul>
+        {% else %}
+        <span>
+            Personne n'est encore arrivé !
+        </span>
+        {% endif %}
 {% endblock %}
